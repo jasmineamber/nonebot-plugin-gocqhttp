@@ -46,7 +46,7 @@ class AccountConfigHelper:
                 "account": self.account,
                 "server_address": f"ws://127.0.0.1:{driver_config.port}/onebot/v11/ws",
                 "access_token": onebot_config.onebot_access_token or "",
-                "http_server_address": f"ws://127.0.0.1:{driver_config.http_port}/onebot/v11/ws",
+                "http_server_address": f"127.0.0.1:{driver_config.http_port}",
             },
         )
         return self.config_path.write_text(rendered_string, encoding="utf-8")
