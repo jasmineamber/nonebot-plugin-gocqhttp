@@ -75,7 +75,7 @@ output:
 
 # 默认中间件锚点
 default-middlewares: &default # 访问密钥, 强烈推荐在公网的服务器设置
-  access-token: ""
+  access-token: "{{{access_token}}}"
 
   # 事件过滤器文件目录
   filter: ""
@@ -106,7 +106,6 @@ servers:
       reconnect-interval: 3000
       middlewares:
         <<: *default
-        access-token: "{{{access_token}}}"
   - http: # HTTP 通信设置
       address: "{{{http_server_address}}}" # HTTP监听地址
       timeout: 5 # 反向 HTTP 超时时间, 单位秒，<5 时将被忽略
