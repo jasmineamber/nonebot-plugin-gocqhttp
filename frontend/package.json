@@ -11,7 +11,7 @@
     "dev": "quasar dev"
   },
   "dependencies": {
-    "@quasar/extras": "^1.14.2",
+    "@quasar/extras": "^1.14.3",
     "axios": "^0.27.2",
     "core-js": "^3.23.4",
     "quasar": "^2.7.5",
@@ -23,7 +23,7 @@
     "@fontsource/dseg14": "^4.5.3",
     "@fontsource/roboto-mono": "^4.5.7",
     "@quasar/app": "^3.3.3",
-    "@types/node": "^18.0.3",
+    "@types/node": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "ansi_up": "^5.1.0",
