@@ -6,16 +6,11 @@ from nonebot.adapters.onebot.v11 import Adapter
 from nonebot.drivers import ReverseDriver
 from nonebot.log import default_filter, default_format
 
-from . import plugin, web  # noqa: F401
+from . import plugin  # noqa: F401
 from .log import LOG_STORAGE, logger
 from .plugin_config import config
-from .process import (
-    ACCOUNTS_SAVE_PATH,
-    BINARY_PATH,
-    ProcessesManager,
-    download_gocq,
-    kill_duplicated_processes,
-)
+from .process import (ACCOUNTS_SAVE_PATH, BINARY_PATH, ProcessesManager,
+                      download_gocq, kill_duplicated_processes)
 
 driver = get_driver()
 
@@ -24,7 +19,7 @@ if (adapter_name := Adapter.get_name()) not in driver._adapters:
 if not isinstance(driver, ReverseDriver) or not isinstance(driver.server_app, FastAPI):
     raise NotImplementedError("Only FastAPI reverse driver is supported.")
 
-driver.server_app.mount("/go-cqhttp", web.app, name="go-cqhttp plugin")
+# driver.server_app.mount("/go-cqhttp", web.app, name="go-cqhttp plugin")
 
 
 @driver.on_startup
@@ -50,10 +45,10 @@ async def startup():
         return_exceptions=True,
     )
 
-    logger.info(
-        "Startup complete, Web UI has served to "
-        f"<u><e>http://{driver.config.host}:{driver.config.port}/go-cqhttp/</e></u>"
-    )
+    # logger.info(
+    #     "Startup complete, Web UI has served to "
+    #     f"<u><e>http://{driver.config.host}:{driver.config.port}/go-cqhttp/</e></u>"
+    # )
 
     return
 
